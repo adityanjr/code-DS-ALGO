@@ -1,7 +1,7 @@
-# Codes-DS-ALGO  [![contributions welcome](https://img.shields.io/badge/Contributions-welcome-blue)](https://github.com/adityanjr/code-DS-ALGO/blob/master/contributing.md)&nbsp;
+# Codes-DS-ALGO   [![contributions welcome](https://img.shields.io/badge/Contributions-welcome-blue)](https://github.com/adityanjr/code-DS-ALGO/blob/master/contributing.md)&nbsp;
 Your own personal library of every **algorithm** and **data structure** codes that you will ever encounter.
 > This repository contains some useful questions for interview and competitive programming.
-> This will also help to complete HacktoberFest PRs challenge by DigitalOcean.
+> This will also help to complete PRs for HacktoberFest challenge.
 
 ## Contribution Guidelines
 
