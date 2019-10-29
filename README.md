@@ -14,7 +14,7 @@ Your own personal library of every **algorithm** and **data structure** codes th
 5. Visit your fork of the repository and make a pull request
 6. Wait and see your changes becoming live
 
-#### Further DO Checkout:
+#### Further 
 Read our [Contribution Guidelines](https://github.com/adityanjr/code-DS-ALGO/blob/master/contributing.md) before you contribute.
 
 ## Supported Languages :
