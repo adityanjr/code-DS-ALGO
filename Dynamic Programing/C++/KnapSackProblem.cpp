@@ -17,14 +17,8 @@ for(int i=0;i<=N;i++){
         else{
             dp[i][wt] = max(val[i-1]+dp[i-1][wt-wts[i-1]],dp[i-1][wt]);
         }
-
-
     }
-
-
 }
-
-
 return dp[N][W];
 }
 
@@ -43,8 +37,6 @@ else{
     }
 
 }
-
-
 
 int main(){
 
