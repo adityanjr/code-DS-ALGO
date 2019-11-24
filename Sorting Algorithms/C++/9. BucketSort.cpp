@@ -1,18 +1,28 @@
+// <h1>Bucket Sort</h1>
+// <p>Bucket sort, or bin sort, is a sorting algorithm that works by distributing the 
+// elements of an array into a number of buckets. Each bucket is then sorted individually, 
+// either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm. 
+// It is a distribution sort, a generalization of pigeonhole sort, and is a cousin of radix sort in the 
+// most-to-least significant digit flavor. Bucket sort can be implemented with comparisons and therefore can
+// also be considered a comparison sort algorithm. The computational complexity estimates involve the number of buckets.
+
+// src="https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif"
+// href="https://en.wikipedia.org/wiki/Bucket_sort" Source --> Wikipedia
+
+// Algo :
+// bucketSort(arr[], n)
+// 1) Create n empty buckets (Or lists).
+// 2) Do following for every array element arr[i].
+//    a) Insert arr[i] into bucket[n*array[i]]
+// 3) Sort individual buckets using insertion sort.
+// 4) Concatenate all sorted buckets.
+
+// Generally used for floating point numbers.
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
 using namespace std;
-/* Algo :
-bucketSort(arr[], n)
-1) Create n empty buckets (Or lists).
-2) Do following for every array element arr[i].
-.......a) Insert arr[i] into bucket[n*array[i]]
-3) Sort individual buckets using insertion sort.
-4) Concatenate all sorted buckets.
-*/
-
-// Generally used for floating point numbers.
-
 
 void bucketSort(float a[],int n){
 vector<float> buckets[n];
@@ -31,8 +41,6 @@ for(i=0;i<n;i++){
 }
 
 }
-
-
 
 //-------------------------------print function
 void print(float *a,int n){
