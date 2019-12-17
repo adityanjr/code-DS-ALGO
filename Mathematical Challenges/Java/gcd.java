@@ -1,24 +1,16 @@
-import java.util.*;
-import java.io.*;
+/*
+ * The greatest common divisor is the largest natural number that divides two numbers without leaving a remainder.
+ */
 
-public class gcd {
+public class GCD {
 
-	public static int gcd(int a, int b) {
-		if(b==0)
-			return a;
-		if(a==0)
-			return b;
-		return gcd(b,a%b);
+	public static int gcd(int num1, int num2) {
+		if (num1 == 0)			// If the first number becomes 0, then the second number is the GCD of the two numbers.
+			return num2;
+		return gcd(num2 % num1, num1);	// Else, find the GCD of the remainder when second number is divided by the first, and the first number.
 	}
 
-	public static void main(String ars[]) {
-		int num1,num2,res;
-		Scanner inp = new Scanner(System.in);
-		System.out.println("Enter the first number: ");
-		num1 = inp.nextInt();
-		System.out.println("Enter the second number: ");
-		num2 = inp.nextInt();
-		res = gcd(num1,num2);
-		System.out.println("The GCD of "+num1+" and "+num2+" is "+res);
+	public static void main(String[] args) {
+		System.out.println(gcd(35, 10));
 	}
 }

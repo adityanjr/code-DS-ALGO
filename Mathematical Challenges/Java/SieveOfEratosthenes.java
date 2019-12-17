@@ -1,44 +1,30 @@
-import java.util.Arrays;
-import java.util.Scanner;
+package algo.numerals;
 
-public class SieveOfEratosthenes
-{
-	public static void main(String[] args)
-	{
-		Scanner input = new Scanner(System.in);
+/**
+ * Created by sherxon on 1/13/17.
+ */
 
-		int n = input.nextInt();
-		System.out.println("The prime numbers up to " + n + " are:");
-		sieve(n);
-	}
+/**
+ * This is finding prime numbers up to given number N. Space complexity is N.
+ * The ides is to mark all numbers are divisible by i starting from 2 in every step.
+ */
+public class SieveofEratosthenes {
+    public static void main(String[] args) {
+        findPrimes(100);
+    }
 
-	public static void sieve(int n)
-	{
-		boolean primes[] = new boolean[n + 1];
+    // print all prime numbers up to given number n
+    static void findPrimes(int n) {
+        boolean[] primes = new boolean[n];
 
-		Arrays.fill(primes, true);
+        for (int i = 2; i < n; i++)
+            if (!primes[i])
+                for (int j = i * i; j < primes.length; j += i)
+                    primes[j] = true;
 
-		primes[0] = false;
-		primes[1] = false;
+        for (int i = 2; i < primes.length; i++)
+            if (!primes[i])
+                System.out.println(i);
 
-		for (int p = 2; p * p <= n; p += (p == 2 ? 1 : 2))
-		{
-			if (!primes[p])
-			{
-				continue;
-			}
-
-			for (int multiplier = p; multiplier * p <= n; multiplier++)
-			{
-				primes[p * multiplier] = false;
-			}
-		}
-		for (int i = 2; i <= n; i++)
-		{
-			if (primes[i])
-			{
-				System.out.println(i);
-			}
-		}
-	}
+    }
 }
