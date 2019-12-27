@@ -1,0 +1,361 @@
+1) **Binary Tree Postorder Traversal**
+Given a binary tree, return the postorder traversal of its nodes' values.
+
+For example:
+Given binary tree {1,#,2,3},
+   1
+    \
+     2
+    /
+   3
+return [3,2,1].
+Note: Recursive solution is trivial, could you do it iteratively?
+
+2) **Copy List with Random Pointer**
+A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
+Return a deep copy of the list.
+
+3)**Populating Next Right Pointers in Each Node II**
+Follow up for problem "Populating Next Right Pointers in Each Node".
+What if the given tree could be any binary tree? Would your previous solution still work?
+
+4) Diagonal traverse
+Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order.
+Input:
+[
+ [ 1, 2, 3 ],
+ [ 4, 5, 6 ],
+ [ 7, 8, 9 ]
+]
+Output:  [1,2,4,7,5,3,6,8,9]
+
+
+5)Word Ladder II
+Given two words (beginWord and endWord), and a dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:
+
+Only one letter can be changed at a time
+Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
+For example,
+
+Given:
+beginWord = "hit"
+endWord = "cog"
+wordList = ["hot","dot","dog","lot","log","cog"]
+Return
+  [
+    ["hit","hot","dot","dog","cog"],
+    ["hit","hot","lot","log","cog"]
+  ]
+Note:
+Return an empty list if there is no such transformation sequence.
+All words have the same length.
+All words contain only lowercase alphabetic characters.
+You may assume no duplicates in the word list.
+You may assume beginWord and endWord are non-empty and are not the same.
+
+6)Binary Tree Maximum Path Sum
+Given a binary tree, find the maximum path sum.
+
+For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.
+
+For example:
+Given the below binary tree,
+
+       1
+      / \
+     2   3
+Return 6.
+7)Shortest Palindrome
+Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.
+
+For example:
+
+Given "aacecaaa", return "aaacecaaa".
+
+Given "abcd", return "dcbabcd".
+
+8)Insert Interval
+Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
+
+You may assume that the intervals were initially sorted according to their start times.
+
+Example 1:
+Given intervals [1,3],[6,9], insert and merge [2,5] in as [1,5],[6,9].
+
+Example 2:
+Given [1,2],[3,5],[6,7],[8,10],[12,16], insert and merge [4,9] in as [1,2],[3,10],[12,16].
+
+This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
+
+9)Serialize and Deserialize Binary Tree
+Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+
+Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.
+
+For example, you may serialize the following tree
+
+    1
+   / \
+  2   3
+     / \
+    4   5
+as "[1,2,3,null,null,4,5]", just the same as how LeetCode OJ serializes a binary tree. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
+Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
+
+10)Trapping Rain Water
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+
+For example,
+Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
+
+11)LRU Cache
+
+Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.
+
+get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
+put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+
+Follow up:
+Could you do both operations in O(1) time complexity?
+
+Example:
+
+LRUCache cache = new LRUCache( 2 /* capacity */ );
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // returns 1
+cache.put(3, 3);    // evicts key 2
+cache.get(2);       // returns -1 (not found)
+cache.put(4, 4);    // evicts key 1
+cache.get(1);       // returns -1 (not found)
+cache.get(3);       // returns 3
+cache.get(4);       // returns 4
+
+12)Cut Off Trees for Golf Event
+You are asked to cut off trees in a forest for a golf event. The forest is represented as a non-negative 2D map, in this map:
+
+0 represents the obstacle can't be reached.
+1 represents the ground can be walked through.
+The place with number bigger than 1 represents a tree can be walked through, and this positive number represents the tree's height.
+You are asked to cut off all the trees in this forest in the order of tree's height - always cut off the tree with lowest height first. And after cutting, the original place has the tree will become a grass (value 1).
+
+You will start from the point (0, 0) and you should output the minimum steps you need to walk to cut off all the trees. If you can't cut off all the trees, output -1 in that situation.
+
+You are guaranteed that no two trees have the same height and there is at least one tree needs to be cut off.
+
+Example 1:
+Input:
+[
+ [1,2,3],
+ [0,0,4],
+ [7,6,5]
+]
+Output: 6
+Example 2:
+Input:
+[
+ [1,2,3],
+ [0,0,0],
+ [7,6,5]
+]
+Output: -1
+Example 3:
+Input:
+[
+ [2,3,4],
+ [0,0,5],
+ [8,7,6]
+]
+Output: 6
+Explanation: You started from the point (0,0) and you can cut off the tree in (0,0) directly without walking.
+Hint: size of the given matrix will not exceed 50x50.
+
+13) Reaching Points
+A move consists of taking a point (x, y) and transforming it to either (x, x+y) or (x+y, y).
+
+Given a starting point (sx, sy) and a target point (tx, ty), return True if and only if a sequence of moves exists to transform the point (sx, sy) to (tx, ty). Otherwise, return False.
+
+Examples:
+Input: sx = 1, sy = 1, tx = 3, ty = 5
+Output: True
+Explanation:
+One series of moves that transforms the starting point to the target is:
+(1, 1) -> (1, 2)
+(1, 2) -> (3, 2)
+(3, 2) -> (3, 5)
+
+Input: sx = 1, sy = 1, tx = 2, ty = 2
+Output: False
+
+Input: sx = 1, sy = 1, tx = 1, ty = 1
+Output: True
+
+Note:
+
+sx, sy, tx, ty will all be integers in the range [1, 10^9].
+
+14) First Missing Positive
+Given an unsorted integer array, find the first missing positive integer.
+
+For example,
+Given [1,2,0] return 3,
+and [3,4,-1,1] return 2.
+
+Your algorithm should run in O(n) time and uses constant space.
+
+14)768. Max Chunks To Make Sorted II
+This question is the same as "Max Chunks to Make Sorted" except the integers of the given array are not necessarily distinct, the input array could be up to length 2000, and the elements could be up to 10**8.
+
+Given an array arr of integers (not necessarily distinct), we split the array into some number of "chunks" (partitions), and individually sort each chunk.  After concatenating them, the result equals the sorted array.
+
+What is the most number of chunks we could have made?
+
+Example 1:
+
+Input: arr = [5,4,3,2,1]
+Output: 1
+Explanation:
+Splitting into two or more chunks will not return the required result.
+For example, splitting into [5, 4], [3, 2, 1] will result in [4, 5, 1, 2, 3], which isn't sorted.
+Example 2:
+
+Input: arr = [2,1,3,4,4]
+Output: 4
+Explanation:
+We can split into two chunks, such as [2, 1], [3, 4, 4].
+However, splitting into [2, 1], [3], [4], [4] is the highest number of chunks possible.
+Note:
+
+arr will have length in range [1, 2000].
+arr[i] will be an integer in range [0, 10**8].
+
+
+
+15) Swim in Rising Water
+On an N x N grid, each square grid[i][j] represents the elevation at that point (i,j).
+
+Now rain starts to fall. At time t, the depth of the water everywhere is t. You can swim from a square to another 4-directionally adjacent square if and only if the elevation of both squares individually are at most t. You can swim infinite distance in zero time. Of course, you must stay within the boundaries of the grid during your swim.
+
+You start at the top left square (0, 0). What is the least time until you can reach the bottom right square (N-1, N-1)?
+
+Example 1:
+
+Input: [[0,2],[1,3]]
+Output: 3
+Explanation:
+At time 0, you are in grid location (0, 0).
+You cannot go anywhere else because 4-directionally adjacent neighbors have a higher elevation than t = 0.
+
+You cannot reach point (1, 1) until time 3.
+When the depth of water is 3, we can swim anywhere inside the grid.
+Example 2:
+
+Input: [[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]
+Output: 16
+Explanation:
+ 0  1  2  3  4
+24 23 22 21  5
+12 13 14 15 16
+11 17 18 19 20
+10  9  8  7  6
+
+The final route is marked in bold.
+We need to wait until time 16 so that (0, 0) and (4, 4) are connected.
+Note:
+
+2 <= N <= 50.
+grid[i][j] is a permutation of [0, ..., N*N - 1].
+
+16) Find K-th Smallest Pair Distance
+Given an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.
+
+Example 1:
+Input:
+nums = [1,3,1]
+k = 1
+Output: 0
+Explanation:
+Here are all the pairs:
+(1,3) -> 2
+(1,1) -> 0
+(3,1) -> 2
+Then the 1st smallest distance pair is (1,1), and its distance is 0.
+Note:
+2 <= len(nums) <= 10000.
+0 <= nums[i] < 1000000.
+1 <= k <= len(nums) * (len(nums) - 1) / 2.
+
+17)Similar String Groups
+Two strings X and Y are similar if we can swap two letters (in different positions) of X, so that it equals Y.
+
+For example, "tars" and "rats" are similar (swapping at positions 0 and 2), and "rats" and "arts" are similar, but "star" is not similar to "tars", "rats", or "arts".
+
+Together, these form two connected groups by similarity: {"tars", "rats", "arts"} and {"star"}.  Notice that "tars" and "arts" are in the same group even though they are not similar.  Formally, each group is such that a word is in the group if and only if it is similar to at least one other word in the group.
+
+We are given a list A of unique strings.  Every string in A is an anagram of every other string in A.  How many groups are there?
+
+Example 1:
+
+Input: ["tars","rats","arts","star"]
+Output: 2
+Note:
+
+A.length <= 2000
+A[i].length <= 1000
+A.length * A[i].length <= 20000
+All words in A consist of lowercase letters only.
+All words in A have the same length and are anagrams of each other.
+The judging time limit has been increased for this question.
+
+18) Interleaving String
+Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
+
+Example 1:
+
+Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
+Output: true
+Example 2:
+
+Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
+Output: false
+
+19)Maximum Frequency Stack
+Implement FreqStack, a class which simulates the operation of a stack-like data structure.
+
+FreqStack has two functions:
+
+push(int x), which pushes an integer x onto the stack.
+pop(), which removes and returns the most frequent element in the stack.
+If there is a tie for most frequent element, the element closest to the top of the stack is removed and returned.
+
+
+Example 1:
+
+Input:
+["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],
+[[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
+Output: [null,null,null,null,null,null,null,5,7,5,4]
+Explanation:
+After making six .push operations, the stack is [5,7,5,7,4,5] from bottom to top.  Then:
+
+pop() -> returns 5, as 5 is the most frequent.
+The stack becomes [5,7,5,7,4].
+
+pop() -> returns 7, as 5 and 7 is the most frequent, but 7 is closest to the top.
+The stack becomes [5,7,5,4].
+
+pop() -> returns 5.
+The stack becomes [5,7,4].
+
+pop() -> returns 4.
+The stack becomes [5,7].
+
+
+Note:
+
+Calls to FreqStack.push(int x) will be such that 0 <= x <= 10^9.
+It is guaranteed that FreqStack.pop() won't be called if the stack has zero elements.
+The total number of FreqStack.push calls will not exceed 10000 in a single test case.
+The total number of FreqStack.pop calls will not exceed 10000 in a single test case.
+The total number of FreqStack.push and FreqStack.pop calls will not exceed 150000 across all test cases.
