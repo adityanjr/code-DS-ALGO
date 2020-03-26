@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+string between(string,int);
+main(){
+    int i=0;
+string str,temp=" ";
+cin>>str;
+
+temp=between(str,i);
+    cout<<temp;
+    
+}
+string between(string str,int i){
+    string temp="";
+    if(str[i]=='('){
+        int j=0;
+        for(int k=i+1;str[k]!=')';k++){
+            temp+=str[k];
+        }
+      //  temp[j]='\0';
+        return temp;
+       }
+       else{
+        return between(str,i+1);
+       }
+}

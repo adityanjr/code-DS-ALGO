@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class node{
+	public:
+	int data;
+	node *left, *right;
+	node(int d){
+	data=d;
+	left=right=NULL;}};
+void input(int a[], int N)
+{for (int i=0;i<N;i++)
+{cin>>a[i];}}
+node* create_tree(int postorder[], int inorder[], int& post_end, int in_start, int in_end, int N){
+	int i;
+	if (in_start>in_end or post_end<0)
+	{return NULL;}
+	for (i=0;i<N;i++)
+	{if (inorder[i]==postorder[post_end])
+	{break;}}
+	node* root=new node(postorder[post_end]);
+	post_end--;
+	root->right=create_tree(postorder,inorder,post_end,i+1,in_end,N);
+	root->left=create_tree(postorder,inorder,post_end,in_start,i-1,N);
+	return root;}
+void output(node* root){
+	if (root==NULL)
+		{return;}
+	root->left?cout<<root->left->data:cout<<"END";
+	cout<<" => " <<root->data <<" <= " ;
+	root->right?cout<<root->right->data:cout<<"END";
+	cout<<endl;
+output(root->left);
+output(root->right);}
+int main(){
+	int M,postorder[100],N,inorder[100];
+    cin>>M;
+    input(postorder,M);
+    cin>>N;
+    input(inorder,N);
+    node* root=NULL;
+    int post_end=M-1;
+    root = create_tree(postorder, inorder, post_end, 0, N - 1, N);
+    output(root);}

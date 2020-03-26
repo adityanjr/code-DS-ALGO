@@ -1,0 +1,85 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class node{
+public:
+    int data;
+    node*left;
+    node*right;
+    node(int d)
+    {data=d;
+    left=NULL;
+    right=NULL;
+    }
+    };
+        void takeInput(node* &root) {
+    string left, right;
+    int data;
+    cin >> data;
+    root = new node(data);
+
+    cin >> left;
+    if(left == "true") {
+        takeInput(root->left);
+    }
+
+    cin >> right;
+    if(right == "true") {
+        takeInput(root->right);
+    }
+}
+void zizagtraversal(node* root)
+{
+    // if null then return
+    if (!root)
+        return;
+ 
+    // declare two stacks
+    stack<node*> currentlevel;
+    stack<node*> nextlevel;
+ 
+    // push the root
+    currentlevel.push(root);
+ 
+    // check if stack is empty   
+    bool lefttoright = true;
+    while (!currentlevel.empty()) {
+ 
+        // pop out of stack
+        node* temp = currentlevel.top();
+        currentlevel.pop();
+ 
+        // if not null
+        if (temp) {
+ 
+            // print the data in it
+            cout << temp->data << " ";
+ 
+            // store data according to current
+            // order.
+            if (lefttoright) {
+                if (temp->left)
+                    nextlevel.push(temp->left);
+                if (temp->right)
+                    nextlevel.push(temp->right);
+            }
+            else {
+                if (temp->right)
+                    nextlevel.push(temp->right);
+                if (temp->left)
+                    nextlevel.push(temp->left);
+            }
+        }
+ 
+        if (currentlevel.empty()) {
+            lefttoright = !lefttoright;
+            swap(currentlevel, nextlevel);
+        }
+    }
+}
+int main() {
+    node*root=NULL;
+vector <int> path;
+takeInput(root);
+zizagtraversal(root);
+}

@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: url('7.jpg') no-repeat;
+  background-size: cover;
+}
+
+h2{
+  font-size: 60px;
+  color: green;
+  padding-left: 40%;
+}
+
+#container{
+  position: fixed;
+  top: 10px;
+  left: 40%;
+}
+
+#canvas{
+    background-color: burlywood;
+}
+
+#canvas-block{
+    margin-left: -250px;
+    padding-left: 50%;
+}

@@ -1,0 +1,74 @@
+#include<iostream>
+using namespace std;
+class Node{
+public:
+	int data;
+	Node*next;
+	Node(int d)
+	{
+		data=d;
+		next=0;
+	}
+};
+
+Node*createLL(int length)
+{
+	Node*head=0;
+	Node*tail=0;
+	int x;
+	int i=1;
+	while(i<=length)
+	{
+		cin>>x;
+		Node*newNode = new Node(x);
+		
+		if(head==0)
+		{
+			head=newNode;
+			tail=newNode;
+		}
+		else 
+		{
+			tail->next=newNode;
+			tail=tail->next;
+		}
+		i++;
+	}
+	return head;
+}
+
+Node* kReverse(Node* head, int k){
+    if (head == NULL) return head;
+
+    int counter = 0;
+    Node* cur = head;
+    Node* previous = NULL;
+    while(counter < k and cur){
+        Node* ahead = cur->next;
+        cur->next = previous;
+        previous = cur;
+        cur = ahead;
+        ++counter;
+    }
+    head->next = kReverse(cur, k);
+    return previous;
+}
+
+void printLL(Node*head)
+{
+	Node *curr=head;
+	while(curr!=0)
+	{
+		cout<<curr->data<<" ";
+		curr=curr->next;
+	}
+}
+
+int main()
+{
+	int n; cin>>n;
+	int k; cin >> k;
+	Node* head = createLL(n);
+    head = kReverse(head, k);
+    printLL(head);
+}

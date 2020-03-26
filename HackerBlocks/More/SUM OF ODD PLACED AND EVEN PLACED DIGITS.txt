@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int no_digits(char* num){
+    int counter = 0;
+    int i=0;
+    while(num[i++]!='\0'){
+        counter++;
+    }
+    return counter;
+}
+
+int main() {
+
+    char num[10];
+    cin>>num;
+
+    int odd_sum = 0;
+    int even_sum = 0;
+    int i = 0;
+    
+    while(num[i]!='\0'){
+        if(i%2==0){
+            even_sum += (num[i]-'0');
+        }else{
+            odd_sum += (num[i]-'0');
+        }        
+        i++;
+    }
+    // cout<<"vdsv";
+    int len = no_digits(num);
+    if(len%2==0){
+        cout<<odd_sum<<endl<<even_sum<<endl;
+    }else{
+        cout<<even_sum<<endl<<odd_sum<<endl;
+    }
+}

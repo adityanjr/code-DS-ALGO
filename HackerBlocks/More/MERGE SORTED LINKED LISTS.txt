@@ -1,0 +1,157 @@
+#include <iostream>
+using namespace std;
+class node{
+    public:
+        int data;
+        node* next= NULL;
+        node(int d)
+        {
+            data=d;
+        }
+
+};
+void insertAtHead(node*& head,int data)
+{
+    node*n=new node(data);
+    n->next=head;
+    head=n;
+    return;
+}
+
+void inserAtTail(node*& head,int data)
+{
+    if(head==NULL)
+    {
+        insertAtHead(head,data);
+        return;
+    }
+    node* temp= head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    node*n=new node(data);
+    temp->next=n;
+    return;
+
+}
+
+void insertInMiddle(node* head,int p,int data)
+{
+    if(head==NULL || p==1)
+    {
+        insertAtHead(head,data);
+    }
+    for(int i=2;i<=p;i++)
+    {
+        head=head->next;
+    }
+    node *n=new node(data);
+    n->next=head->next;
+    head->next=n;
+}
+
+void buildList(node*&head,int num)
+{
+    while(num>0)
+    {
+        int data;
+        cin>>data;
+        inserAtTail(head,data);
+        num--;
+    }
+    return;
+}
+
+
+void print(node* head)
+{
+    while(head!=NULL)
+    {
+        cout<<head->data<<" ";
+        head=head->next;
+    }
+    return;
+}
+
+node* merge(node* a,node* b)
+{
+    if(a==NULL)
+    {
+        return b;
+    }
+    else if(b==NULL)
+    {
+        return a;
+    }
+    node*c;
+    if(a->data < b->data)
+    {
+        c=a;
+        c->next=merge(a->next,b);
+    }
+    else{
+        c=b;
+        c->next=merge(a,b->next);
+    }
+    return c;
+}
+
+void del(node*& head,int p)
+{
+    if(p==0)
+    {
+        head=head->next;
+        return;
+    }
+    node* c= head->next;
+    node* pre= head;
+    while(p!=1)
+    {
+        c=c->next;
+        pre=pre->next;
+        p--;
+    }
+    pre->next=c->next;
+    c=NULL;
+
+}
+
+/*istream& operator>>(istream& is,node*&n)
+{
+    buildList(n);
+    return is;
+}*/
+
+ostream& operator<<(ostream& os, node*& n)
+{
+    print(n);
+    return os;
+}
+
+
+
+int main() {
+    // your are using the same linked list again and again for every test.You should use new list as it gets bigger and bigger each time.
+
+    //node* head1 = NULL;
+    //node* head2 = NULL;
+    int test;
+    cin>>test;
+    while(test--)
+    {    
+       // instead,make them null everytime you start a test  
+        node* head1 = NULL;
+        node* head2 = NULL;
+    
+        int size1,size2;
+        cin>>size1;
+        buildList(head1,size1);
+        //cout<<head1<<endl;
+        cin>>size2;
+        buildList(head2,size2);
+        //cout<<head2<<endl;
+        node* head3=merge(head1,head2);
+        cout<<head3<<endl;
+    }
+}

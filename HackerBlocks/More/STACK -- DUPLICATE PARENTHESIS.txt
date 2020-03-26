@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+void duplicateparenthesis(string exp)
+{
+    stack<char> stack;
+    for (int i = 0; i < exp.length(); i++)
+    {
+        if (exp[i] != ')') {
+            stack.push(exp[i]);
+        }
+        else
+        {
+            if (stack.top() == '(')
+            {
+                cout << "No Duplicates Found ";
+                return;
+            }
+
+            while (stack.top() != '(')
+                stack.pop();
+            stack.pop();
+        }
+     }
+     cout << "Duplicate Found "<<endl;
+}
+int main()
+{  
+int n;cin>>n;
+string exp;
+for(int i=0;i<n;i++){
+    getline (cin, exp);
+    duplicateparenthesis(exp);
+}
+    return 0;
+}

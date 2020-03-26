@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+class node
+{
+    public:
+    int data;
+    node* next;
+    node(int d)
+    {
+        data=d;
+        next=0;
+    }
+};
+node* create(int n)
+{
+    node* head=0;
+    node* tail=0;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        node* n=new node(x);
+        if(head==0)
+        {
+            head=n;
+            tail=n;
+        }
+        else
+        {
+            tail->next=n;
+            tail=tail->next;
+        }
+    }
+    return head;
+}
+void print(node* head)
+{
+    node* cur=head;
+    while(cur)
+    {
+        cout<<cur->data<<" ";
+        cur=cur->next;
+    }
+}
+void reverse(node* head,node* cur,node* ahead)
+{
+    if(cur->next==0)
+    {
+        return;
+    }
+    if(ahead==0)
+    {
+        cur=cur->next;
+        ahead=cur->next;
+        //recursive call
+        reverse(head,cur,ahead);
+        return;
+    }
+    swap(cur->data,ahead->data);
+    reverse(head,cur,ahead->next);
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    node* head=create(n);
+    node* cur=head;
+    node* ahead=cur->next;
+    reverse(head,cur,ahead);
+    reverse(head,cur,ahead);
+    print(head);
+}

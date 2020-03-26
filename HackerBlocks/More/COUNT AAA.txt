@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int aaaoverlap(char *s,int beg,int n)
+{if(beg==n-2) return 0;
+    int ans=0;
+    if(s[beg]=='a' && s[beg+1]=='a' && s[beg+2]=='a') ++ans;
+    ans+=aaaoverlap(s,beg+1,n);
+    return ans;
+}
+int aaanonoverlap(char *s,int beg,int n,int toggle){
+  if(beg>=n-2) return 0;
+    int ans=0;
+    int i=beg;
+    if(s[i]=='a'&&s[i+1]=='a'&&s[i+2]=='a'){
+        return 1+aaanonoverlap(s,beg+3,n,toggle);
+    }
+    else 
+    return aaanonoverlap(s,beg+1,n,toggle);
+      
+    
+    
+    
+}
+int main() {
+    char s[100];
+    cin>>s;
+    int n=strlen(s);
+    if(n==1){cout<<0<<endl<<0;}
+    else{ cout<<aaaoverlap(s,0,n)<<endl;
+    cout<<aaanonoverlap(s,0,n,0);}
+	return 0;
+}

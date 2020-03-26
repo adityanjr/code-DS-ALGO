@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int WithoutMap(int *a ,int n){
+    int maX=0;
+    for(int i=0;i<n;i++){
+        if(a[i]>maX)
+        maX=a[i];
+    }
+    int m[maX+2]{0};
+    for(int i=0;i<n;i++){
+        m[a[i]]++;
+    }
+    int M=0;
+    int ans=0;
+    for(int i=0;i<maX+2;i++){
+        if(m[i]>M){
+            M=m[i];
+            ans=i;
+        }
+    }    
+    return ans;
+}
+
+int main() {
+    int n;
+    cin>>n;
+    int a[n];
+    map<int,int> m;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        m[a[i]]++;
+    }
+    int ans,max=0;
+    for(auto it : m){
+        if(it.second>max){
+            ans=it.first;
+            max=it.second;
+        }
+    }
+
+    cout<<WithoutMap(a,n)<<endl;
+    
+}

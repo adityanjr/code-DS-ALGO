@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int triangle(int a)
+ {
+     if (a >= 1)
+         return a + triangle(a-1);
+     else
+         return 0;
+ }
+
+int main ()
+{
+    int i;
+    cin>>i;
+    cout<<triangle(i);
+    return 0;
+}
+

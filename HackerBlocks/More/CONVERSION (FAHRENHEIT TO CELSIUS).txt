@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int minlimit,maxlimits,step;
+    cin>>minlimit>>maxlimits>>step;
+    for( int feh=minlimit; feh<=maxlimits; feh=feh+step)
+    {
+    
+    cout<<feh<<" "<<(5*(feh-32)/9)<<endl;
+    
+}
+return 0;
+}

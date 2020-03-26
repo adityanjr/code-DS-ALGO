@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+void InputMatrix(int arr[][1000], int nRows, int nCols) {
+  for (int r = 0; r < nRows; ++r) {
+    for (int c = 0; c < nCols; ++c) {
+      cin >> arr[r][c];
+    }
+  }
+}
+
+
+void SpiralPrint(int mat[][1000], int nRows, int nCols) {
+  int startRow = 0;
+  int endRow = nRows - 1;
+  int startCol = 0;
+  int endCol = nCols - 1;
+
+  while (startRow <= endRow && startCol <= endCol) {
+
+    // print [startCol, endCol] with startRow fixed
+    for (int col = startCol; col <= endCol; ++col) {
+      cout << mat[startRow][col]<<" ";
+    }
+    ++startRow;
+
+    // print elements in the endcol
+    // [startRow, endRow] with endCol fixed
+    for (int r = startRow; r <= endRow; ++r) {
+      cout << mat[r][endCol]<<" ";
+    }
+    --endCol;
+
+    // print element in the endRow
+    for (int c = endCol; startRow <= endRow && c >= startCol; --c) {
+      cout << mat[endRow][c]<<" ";
+    }
+    --endRow;
+
+    // print elements in the startCol
+    if (endCol >= startCol) {
+      for (int r = endRow; r >= startRow; --r) {
+        cout << mat[r][startCol]<<" ";
+      }
+      ++startCol;
+    }
+  }
+
+}
+
+
+
+int main() {
+  int mat[1000][1000];
+
+  int M, N;
+  // cin >> M, N;   // comma operator
+  cin >> M >> N;
+
+  InputMatrix(mat, M, N);
+
+  SpiralPrint(mat, M, N);
+
+}

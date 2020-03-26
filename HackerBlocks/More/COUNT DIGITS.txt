@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int num,tNum,digit,cnt;
+    int rem;
+      cin>>num;
+     cin>>digit;
+    cnt=0;
+    tNum=num;
+ 
+    while(tNum>0)
+    {
+        rem=tNum%10;
+        if(rem==digit)
+            cnt++;
+        tNum/=10;
+    }
+ 
+   cout<<cnt;
+	return 0;
+}

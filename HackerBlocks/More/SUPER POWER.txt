@@ -1,0 +1,11 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() 
+{
+    int  base, exponent, result;
+    cin >> base >> exponent;
+    result = pow(base, exponent);
+    cout << result;
+    return 0;
+}

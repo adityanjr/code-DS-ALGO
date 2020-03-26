@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+void c_sum(){
+	int csum=0,n;
+	
+	while(1){
+		cin>>n;
+		csum+=n;
+		if(csum<0){
+			break;
+		}
+	else cout<<n<<endl;
+		
+	}
+}
+
+int main(){
+	c_sum();
+}

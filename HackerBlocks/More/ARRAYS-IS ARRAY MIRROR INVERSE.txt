@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main()
+{    int b[100],a[100],n,countt=0;
+cin>>n;
+for(int i=0;i<n;i++)
+{
+    cin>>a[i];
+}
+for(int i=0;i<n;++i)
+{
+    b[a[i]]=i;
+}
+for(int i=0;i<n;i++)
+{
+   if(a[i]==b[i])
+   {
+   countt++;
+   }
+}
+if(countt==n)
+{
+   cout<<"true";
+}
+else
+{
+   cout<<"false";
+}
+}

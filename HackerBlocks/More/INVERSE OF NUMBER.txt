@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+string Inverse(string n){
+    int s=0,e=n.length()-1;
+    while(s<=e){
+        swap(n[s],n[e]);
+        s++;
+        e--;
+    }
+    int arr[15],k=0,i;
+    for(i=0;n[i];i++){
+        arr[n.length()+1-(n[i]-'0')]=i+1;
+    }
+    char str[15];
+    int j;
+    for(j=0;j<i;j++){
+        str[j]=arr[j+1]+48;
+    }
+    str[j]='\0';
+    string out=str;
+    cout<<str;
+    return str;
+}
+
+bool IsmirrorInverse(string n){
+    string check = Inverse(n);
+    if(check == n)   // If the no. is equal to its inverse then its mirror inverse..
+    {      
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+int main() {
+    string s;
+    cin>>s;
+    
+    if(IsmirrorInverse(s))
+	return 0;
+}

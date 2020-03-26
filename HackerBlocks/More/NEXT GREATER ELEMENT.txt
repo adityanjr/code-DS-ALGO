@@ -1,0 +1,35 @@
+#include <iostream>
+#include<stack>
+using namespace std;
+//finding the next greater element
+void nextgreater(int array[],int n){
+    stack<int>s;
+    int i;
+    s.push(0);
+    for(i = 1;i<n;i++){
+        while(s.empty()==false&&array[s.top()]<array[i]){
+            cout<<array[s.top()]<<","<<array[i]<<endl;
+            s.pop();
+        }
+        s.push(i);
+        
+    }
+    while(!s.empty()){
+        cout<<array[s.top()]<<"," <<-1<<endl;
+        s.pop();
+    }
+}
+int main() {
+    int t;
+    cin>>t;
+    for(int i = 0;i<t;i++){
+        int n;
+        cin>>n;
+        int array[n];
+        for(int j =0;j<n;j++)
+        cin>>array[j];
+        nextgreater(array,n);
+        //for(j = 0;j<n;j++)
+        //cout<<array[j]<<","<<soln[j]<<endl;
+    }
+}

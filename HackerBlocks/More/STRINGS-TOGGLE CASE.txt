@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;  // that's it -- you don't need anything from <cstdio>!
+
+void ChangeCase( char* s )
+{
+ for(int i=0;s[i];i++) 
+	{
+		if((s[i] > 64)&&(s[i] < 91)) //check if in range of upper case characters
+		{
+			s[i] += 32; //is upper, offset 32 to make lower
+		}
+		else if((s[i] > 96)&&(s[i] < 123)) //check if in range of lower case characters
+		{
+			s[i] -= 32; //is lower, offset -32 to make upper
+		}
+	}
+}
+
+int main()
+{
+  // Here is where we will keep the string the user gives us
+  char s[ 1000 ];
+
+  // Ask for and get the string from the user. Remember, we only have room for 100 characters!
+  cin.getline( s, 1000 );
+
+  // The function will change the case of letters: modifying the string in s
+  ChangeCase( s );
+
+  // Print the changed string
+  cout << s << endl;
+
+  return 0;
+}

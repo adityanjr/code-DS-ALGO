@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main ()
+{ 
+    int n,arr[100],rem, temp;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++)
+    { int  dec = 0, b = 1;
+    while (arr[i] >0)
+    {
+        rem = arr[i] % 10;
+        dec = dec + rem * b;
+        b*= 2;
+        arr[i]/= 10;
+    }
+    cout<<dec<<endl;
+    }
+    return 0;
+}

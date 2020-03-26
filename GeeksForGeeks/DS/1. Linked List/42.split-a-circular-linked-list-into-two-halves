@@ -1,0 +1,89 @@
+// http://www.geeksforgeeks.org/split-a-circular-linked-list-into-two-halves/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct node {
+	int data;
+	node *next;
+};
+
+void push(node **head, int data){
+	node *n = new node;
+	n->data = data;
+	//n->next = *head;
+	node *ptr = *head;
+	node *start = *head;
+	while(ptr && ptr->next != start){
+		ptr = ptr->next;
+	}
+	if(ptr == NULL){
+		*head = n;
+		n->next = n;
+	}
+	else {
+		n->next = (*head);
+		ptr->next = n;
+	}
+}
+
+void printList(node *head){
+	node *ptr = head;
+	while(ptr && ptr->next != head){
+		cout<<ptr->data<<" ";
+		ptr = ptr->next;
+	}
+	if(ptr)
+		cout<<ptr->data<<'\n';
+}
+
+void splitList(node *head, node **head1, node **head2){
+	if(head == NULL)
+		return;
+	*head1 = head;
+	if(head->next == NULL){
+		return;
+	}
+
+	node *slow = head->next;
+	node *fast = head->next->next;
+	while(fast->next != head && fast->next->next != head){
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	*head2 = slow->next;
+	slow->next = head;
+	while(fast->next != head){
+		fast = fast->next;
+	}
+	fast->next = *head2;
+}
+
+int main(){
+	int list_size, i; 
+   
+  	/* Initialize lists as empty */
+  	struct node *head = NULL;
+  	struct node *head1 = NULL;
+  	struct node *head2 = NULL;  
+ 
+  	/* Created linked list will be 12->56->2->11 */
+  	push(&head, 12); 
+  	push(&head, 56);   
+  	push(&head, 2);   
+  	push(&head, 11);   
+  	push(&head, 100);
+ 
+  	printf("Original Circular Linked List ");
+  	printList(head);      
+  
+  	/* Split the list */
+  	splitList(head, &head1, &head2);
+  
+  	printf("\nFirst Circular Linked List ");
+  	printList(head1);  
+ 
+  	printf("\nSecond Circular Linked List ");
+  	printList(head2);  
+	return 0;
+}

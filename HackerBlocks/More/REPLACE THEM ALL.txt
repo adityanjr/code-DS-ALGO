@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+long int convert(long int n)
+{
+    if(n==0){return 0;}
+    int r=n%10;
+    if(r==0){
+        r=5;
+    }
+    return convert(n/10)*10+r;
+}
+int main()
+{
+    long int n;
+    cin>>n;
+    if(n==0){cout<<5;}
+    else
+    {
+        n=convert(n);
+        cout<<n;
+    }
+    return 0;
+}

@@ -1,0 +1,38 @@
+#include<iostream>
+#include <stdlib.h>
+#include<cstring>
+using namespace std;
+void removeDuplicates(char S[])
+{
+   int n = strlen(S);
+   char prev = '\0';
+   int k = 0;
+ 
+   // loop through the string
+   for (int i = 0; i < n; i++)
+   {
+       // if current char is different than the previous char
+       if (prev != S[i])
+       {
+            // set distinct chars at index k and increment it
+            S[k++] = S[i];
+        }
+ 
+        // update previous char to current char for next iteration of loop
+        prev = S[i];
+   }
+ 
+   // null terminate the resultant string
+   S[k] = '\0';
+}
+ 
+// main function
+int main()
+{
+    char S[1000];
+    cin>>S;
+    removeDuplicates(S);
+  cout<<S;
+ 
+    return 0;
+}

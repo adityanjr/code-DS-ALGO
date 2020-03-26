@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int nspace,nstars,nline,n,upper,lower,i;
+    cin>>n;
+    upper=(n+1)/2;
+    lower=n-upper;
+    for(nline=1;nline<=upper;nline++)
+    {
+        nspace=upper-nline;
+        for(i=1;i<=nspace;i++)
+        cout<<" \t";
+        nstars=2*nline-1;
+        for(i=1;i<=nstars;i++)
+        cout<<"*\t";
+        cout<<endl;
+        
+        
+        
+    }
+    for(nline=lower;nline>=1;nline--)
+    {
+        nspace=lower-nline+1;
+        for(i=1;i<=nspace;i++)
+        cout<<" \t";
+        nstars=2*nline-1;
+        for(i=1;i<=nstars;i++)
+        cout<<"*\t";
+        cout<<endl;
+    }
+	return 0;
+}

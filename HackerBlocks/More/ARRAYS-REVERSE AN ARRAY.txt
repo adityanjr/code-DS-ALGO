@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+void Reverse_Array(int array[],int size)
+{   int temp;
+    size--;
+    for(int i=0;size>=i;size--,i++)
+    {
+        temp=array[i];
+        array[i]=array[size];
+        array[size]=temp;
+    }
+}
+int main()
+{
+    int array[100],i,n;
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+    cin>>array[i];
+    }
+    // Calling Reverse Array Values Function
+    Reverse_Array(array,n);
+    for(i=0;i<n;i++)
+        {
+         cout<<array[i]<<endl;
+        }
+    return 0;
+}

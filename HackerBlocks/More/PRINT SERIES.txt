@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{ int n,n1,k,i=1,j=0;
+cin>>n>>n1;
+while(j<n)
+{
+    k=(3*i)+2;
+    if(k%n1!=0)
+    {
+        cout<<k<<endl;
+        j++;
+    }
+i++;
+}
+}
+

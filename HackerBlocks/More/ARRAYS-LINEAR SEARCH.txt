@@ -1,0 +1,37 @@
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+void linear_search(int fn_arr[], int element, int n) {
+    int i;
+
+    /* for : Check elements one by one - Linear */
+    for (i = 0; i < n; i++) {
+        /* If for Check element found or not */
+        if (fn_arr[i] == element) {
+            cout<< i;
+            break;
+        }
+    }
+
+    if (i==n)
+        cout<<"-1";
+}
+
+int main() {
+    int arr_search[100], i, element,n;
+     cin>>n;
+    if(n>=-1000000000 && n<=1000000000)
+    {
+    
+    for (i = 0; i <n; i++)
+    {
+        cin >> arr_search[i];
+    }
+    cin>>element;
+    //Linear Search Function
+     if(element>=-1000000000 && element<=1000000000)
+    {
+    linear_search(arr_search, element, n);
+    }
+}
+}

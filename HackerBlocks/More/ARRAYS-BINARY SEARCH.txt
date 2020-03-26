@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arr[100],n,x,beg=0,flag=0,p=0;
+    cin>>n;
+    int last=n-1;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cin>>x;
+    while(beg<=last && flag!=1){
+        int mid=(beg+last)/2;
+        if(arr[mid]==x){
+            p=mid;
+            flag=1;
+            
+        }
+        else if(arr[mid]<x)
+        beg=mid+1;
+        else if(arr[mid]>x)
+        last=mid-1;
+    }
+    if(flag==1)
+    cout<<p;
+    else
+    cout<<-1;
+    
+}

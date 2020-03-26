@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+class node
+{
+public:
+	int data;
+	node *next;
+	node(int d)
+	{
+		data=d;
+		next=0;
+	}
+};
+
+node *createLL(int length)
+{
+	node *head=0;
+	node *tail=0;
+	int x;
+	int i=1;
+	while(i<=length)
+	{
+		cin>>x;
+		node *newNode = new node(x);
+		
+		if(head==0)
+		{
+			head=newNode;
+			tail=newNode;
+		}
+		else 
+		{
+			tail->next=newNode;
+			tail=tail->next;
+		}
+		i++;
+	}
+	return head;
+}
+node *mergesortedLL(node *head1,node *head2)
+{
+	if(!head1)
+		return head2;
+	if(!head2)
+		return head1;
+	if(head1->data<head2->data)
+	{
+		head1->next=mergesortedLL(head1->next,head2);
+		return head1;
+	}
+	else
+	{
+		head2->next=mergesortedLL(head1,head2->next);
+		return head2;
+	}
+}
+
+void printLL(node *head)
+{
+	node *curr=head;
+	while(curr!=0)
+	{
+		cout<<curr->data<<" ";
+		curr=curr->next;
+	}
+}
+
+int main()
+{
+	int n;cin>>n;
+	int k;cin>>k;
+	node *head=createLL(n);
+	node *head1=createLL(k);
+	node *ans=mergesortedLL(head,head1);
+	printLL(ans);
+}

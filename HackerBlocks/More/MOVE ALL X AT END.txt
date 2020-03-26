@@ -1,0 +1,41 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+void swap(char &c,char &d)
+{
+    char temp;
+    temp=c;
+    c=d;
+    d=temp;
+}
+void rx(char s[],int li,int i,int j)
+{
+    if(j>li)
+        return;
+    if(s[i]=='x')
+    {
+        if(s[j]!='x')
+        {
+            swap(s[i],s[j]);
+            rx(s,li,i+1,j+1);
+        }
+        else
+            rx(s,li,i,j+1);
+    }
+    else
+    {
+    rx(s,li,i+1,j+1);
+    }
+}
+int main()
+{
+    char s[1000];
+    int i=0,j=1;
+    cin>>s;
+    int len=strlen(s);
+    //cout<<len;
+    rx(s,len-1,i,j);
+    int n=len-1;
+    for(int i=0;i<=n;i++){
+        cout<<s[i];}
+}

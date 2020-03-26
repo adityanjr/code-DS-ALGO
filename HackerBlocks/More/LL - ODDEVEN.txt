@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int arr[100000],even[1000000],odd[10000000],i,j=0,k=0,no;
+   cin>>no;
+   for(i=0; i<no;i++)
+   {
+   cin>>arr[i];
+   }
+   
+   for(i=0; i<no;i++)
+   {
+   if(arr[i]%2==0)
+   {
+    even[j]=arr[i];
+    j++;
+   }
+   else
+   {
+   odd[k]=arr[i];
+   k++;
+   }
+   }
+  for(i=0; i<k; i++)
+   {
+    cout<<odd[i]<<" ";
+   }
+   for(i=0; i<j ;i++)
+   {
+    cout<<even[i]<<" ";
+   }
+	return 0;
+}

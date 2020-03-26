@@ -1,0 +1,54 @@
+#include<iostream>
+#include<queue>
+#include<vector>
+#include<cstring>
+using namespace std;
+
+class Node{
+	public:
+	int data;
+	Node* left;
+	Node* right;
+	Node(int d){
+		data = d;
+		left = NULL;
+		right = NULL;
+	}
+};
+
+Node* buildTree(){		
+		int x;
+		char decision[10];
+		cin>>x;
+		Node* newNodePtr = new Node(x);
+		
+		cin>>decision;
+		if(strcmp(decision, "true")==0) newNodePtr->left = buildTree();
+		else newNodePtr->left = NULL;
+		
+		cin>>decision;
+		if(strcmp(decision, "true")==0) newNodePtr->right = buildTree();
+		else newNodePtr->right = NULL;
+		
+		return newNodePtr;
+}
+int identicalTrees(Node* a,Node* b)
+{
+    
+    if (a==NULL && b==NULL)
+        return 1;
+ 
+    	return (a && b) && (a->data == b->data) &&
+         identicalTrees(a->left, b->left) &&
+         identicalTrees(a->right, b->right);
+} 
+
+int main(){
+	Node*root1, *root2;
+    root1 = buildTree();
+	root2 = buildTree();
+	if (identicalTrees(root1, root2))
+	cout<<"true";
+	else 
+	cout<<"false";	
+}

@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+class node {
+    public:
+    int data;
+    node*next ; 
+    node(int d)
+    {
+        data= d;
+        next=NULL;
+    }
+};
+node * createLL (int n){
+    node*head=NULL;
+    node*tail=NULL;
+    int x;
+    for(int i=0 ; i<n ; ++i)
+    {
+        cin>>x;
+        node*newnode = new node(x);
+        if(head==NULL){
+            head=newnode;
+            tail=newnode;
+        }
+        else{
+            tail->next = newnode;
+            tail = tail->next;
+        }
+    }
+    return head;
+}
+void printLL(node*head){
+    node*cur = head;
+    while(cur)
+    {
+        cout<<cur->data<<" ";
+        cur=cur->next;
+    }
+}
+node* duplicate (node*head)
+{
+    if(head->next==NULL) return head;
+    node*lh = duplicate(head->next);
+    if(lh->data == head->data) 
+    {
+        head->next=lh->next;
+    }
+    else head->next=lh;
+    return head;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=1; i<=n ; ++i)
+    {
+        int size ; 
+        cin>>size;
+        node*head = createLL(size);
+        //printLL(head);
+        node*newhead = duplicate(head);
+        printLL(newhead);
+        cout<<endl;
+    }
+    return 0;
+}

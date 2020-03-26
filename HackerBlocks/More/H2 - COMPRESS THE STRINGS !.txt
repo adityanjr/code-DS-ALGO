@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+void str_compress(char* str){
+		int f=1;
+	for(int i=0;str[i]!='\0';i++){
+		if(str[i]==str[i+1]){
+			f++;
+		}
+		else {
+			cout<<str[i];
+			if(f!=1) cout<<f;
+			f=1;
+		}
+	}cout<<endl;
+}
+
+int main(){
+	char str[1010];
+	int tcase;
+	cin>>tcase;
+	cin.get();				
+	while(tcase--){			
+		cin>>str;
+		str_compress(str);
+	}
+	    
+}

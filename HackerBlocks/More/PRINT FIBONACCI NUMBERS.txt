@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int fib1 = -1, fib2 = 1, fib3,n;
+    cin>>n;
+
+    while (fib1 + fib2 <=n)
+    {
+        fib3 = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = fib3;
+        cout << fib3 <<endl;
+    }
+    cout << endl;
+
+    return 0;
+}

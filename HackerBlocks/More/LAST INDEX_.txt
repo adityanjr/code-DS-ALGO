@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+int last_index_element(int A[],int x,int n,int key,int index=-1)
+{
+	if(x==n){return index;}
+	if(A[x]==key) {index=x;}
+	return last_index_element(A,x+1,n,key,index);
+}
+
+int main()
+{
+	int A[1000];
+	int n;cin>>n;
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>A[i];
+	}
+	int key;cin>>key;
+	cout<<last_index_element(A,0,n,key);
+}

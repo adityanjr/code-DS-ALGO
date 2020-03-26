@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int cnt = 0;
+
+void printStepForHanoi(int n, char src, char dest, char helper){
+    if (n == 0) return;
+    ++cnt;
+
+    printStepForHanoi(n - 1, src, helper, dest);
+    cout << "Moving ring"<<" "<< n <<" "<< "from"<<" "<< src <<" "<< "to" <<" "<< dest << endl;
+    printStepForHanoi(n - 1, helper, dest, src);
+}
+
+int main(){
+    int n;
+    cin>> n;
+    if(n<=10)
+    printStepForHanoi(n, 'A', 'B','C');   
+}

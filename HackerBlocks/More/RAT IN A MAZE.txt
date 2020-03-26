@@ -1,0 +1,67 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+bool move_forward(char a[][1001], int r, int c, int x, int y)
+{
+	if (r + 1 <= x && a[r + 1][c] != 'X')
+		return true;
+	else
+		return false;
+}
+bool move_downward(char a[][1001], int r, int c, int x, int y)
+{
+	if (c + 1 <= y && a[r][c + 1] != 'X')
+		return true;
+	else
+		return false;
+}
+
+bool rat_in_a_maze(char a[][1001], int r, int c, int x, int y)
+{	if (r == x && c == y && a[r][c]!='X')
+	{ a[r][c] = '1'; return true ;}
+	if (r > x || c > y)
+		return false ;
+	if (a[r][c] == 'X')	return false;
+
+	if (move_downward(a, r, c, x, y))
+	{
+		a[r][c] = '1';
+		if (rat_in_a_maze(a, r, c + 1, x, y))
+			return true;
+		a[r][c] = 'O';
+	}
+	if (move_forward(a, r, c, x, y))
+	{
+		a[r][c] = '1';
+		if ( rat_in_a_maze(a, r + 1, c, x, y))
+			return true;
+		a[r][c] = 'O';
+	}
+	return false;
+}
+
+int main() {
+	int r, c;
+	cin >> r >> c; char a[1001][1001]; int i; int j;
+	for (i = 0; i < r; ++i)
+		for (j = 0; j < c; ++j)
+			cin >> a[i][j];
+	// int x,y; x=r-1;y=c-1;
+	bool ans =  rat_in_a_maze(a, 0, 0, r - 1, c - 1);
+	if (ans)
+	{	for (i = 0; i < r; ++i)
+		{	for (j = 0; j < c; ++j)
+				if (isalpha(a[i][j]))
+					a[i][j] = '0';
+		}
+
+
+		for (i = 0; i < r; ++i)
+		{	for (j = 0; j < c; ++j)
+				cout << a[i][j] << " " ;
+			cout << endl;
+		}
+	}
+	else
+		cout << "-1";
+}

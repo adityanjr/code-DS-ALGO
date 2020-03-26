@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+void tower(int n, char src,char dest,char helper,int &count)
+{
+    count++;
+    if(n==1){
+    cout <<"Move"<<" "<<n<<"th disc from"<<" "<<"T"<<src<<" "<<"to"<<" "<<"T"<<dest<<endl;
+      
+        return;
+    }
+    else{
+    tower(n-1,src,helper,dest,count);
+    cout <<"Move"<<" "<<n<<"th disc from"<<" "<<"T"<<src<<" "<<"to"<<" "<<"T"<<dest<<endl;
+     tower(n-1,helper,dest,src,count);
+      //cout<<count;
+    }
+    
+}
+
+int main()
+{
+    int n;
+    int count=0;
+    cin >> n;
+    tower(n,'1','2','3',count);
+    cout<<count;
+    return 0;
+    }
+    

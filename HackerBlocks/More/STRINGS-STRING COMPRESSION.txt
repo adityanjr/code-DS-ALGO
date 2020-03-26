@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+	char a[100];
+	cin >> a;
+	int l = strlen(a);
+	for (int i = 0; i < l; i++)
+	{	int count = 1, j;
+		for (j = i+1; j < l; j++) {
+			if (a[i] == a[j])
+			{
+				count++;
+
+			}
+			else
+			{
+				break;
+			}
+		}
+		cout << a[i];
+		if (count > 1)
+			cout << count;
+	
+		i = j-1;
+	}
+}

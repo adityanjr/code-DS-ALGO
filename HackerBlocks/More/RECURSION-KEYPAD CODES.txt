@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+string s[100000];
+int ind=0;
+
+void getCode(char ansArr[], char digitOnKeyPad) {
+    char allCodes[][10] = {
+    
+        "","abc", "def",
+        "ghi", "jkl", "mno",
+        "pqrs", "tuv", "wx","yz"
+    };
+    strcpy(ansArr, allCodes[digitOnKeyPad - '0']);
+}
+void printCodes(char numericString[], int be, char ans[],int &count) {
+    if (numericString[be] == '\0') {
+        ans[be] = '\0';
+        count++;
+        //cout << ans<<" ";
+        s[ind]=ans;ind++;
+        return;
+    }
+
+    char curDig = numericString[be];    // '2'
+    char code[100];
+    getCode(code, curDig);      // 2--> abc
+
+    for (int j = 0; code[j] != '\0'; ++j) {
+        ans[be] = code[j];   // a [RECURSION]
+        printCodes(numericString, be + 1, ans,count);
+    }
+}
+int main() {
+    char arr[100];
+    char tmp[100];
+    int count=0;
+    cin >> arr;
+    printCodes(arr, 0, tmp,count);
+    cout<<count<<endl;
+    for(int i=0;i<ind;i++){
+        cout<<s[i]<<" ";
+    }
+}

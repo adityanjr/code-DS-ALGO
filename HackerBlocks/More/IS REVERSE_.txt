@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+bool isRev(char str1[],char str2[],int beg,int end,int len){
+    if(beg>len-1&&end<0) return true;
+    if(str1[beg]==str2[end])
+    return isRev(str1,str2,beg+1,end-1,len);
+    return false;
+}
+int main() {
+        char str1[100],str2[100];
+        cin>>str1;
+        cin>>str2;
+        int len1=strlen(str1);
+        int len2=strlen(str2);
+        if(len1==len2)
+        {
+        if(isRev(str1,str2,0,len1-1,len1)){
+            cout<<"true";
+        }
+        else
+        cout<<"false";}
+        else
+        cout<<"false";
+    	return 0;
+}

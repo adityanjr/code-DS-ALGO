@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int inputarrnumber(int arr[],int n){
+	int max=0;
+	for(int i=0;i<n;++i){
+		cin>>arr[i];
+
+		if(arr[i]>=max){
+			max=arr[i];
+		}
+	}
+	return max;
+}
+void outputarrnumber(int arr[],int n){
+	for(int i=0;i<n;++i){
+		cout<<arr[i]<<" ";
+	}
+}
+void countingsort(int arr[],int n,int max){
+	int count[max+2]={};
+	for(int i=0;i<n;++i){
+		count[arr[i]]=count[arr[i]]+1;
+	}
+	int val=0;
+	for(int a=0;a<=max;++a){
+		for(int b=1;b<=count[a];++b){
+
+			arr[val]=a;
+			++val;
+		}
+
+	}
+}
+int main(){
+	int n;
+	cin>>n;
+	int arr[1000010];
+	int max=inputarrnumber(arr,n);
+	countingsort(arr,n,max);
+	outputarrnumber(arr,n);
+	return 0;
+}

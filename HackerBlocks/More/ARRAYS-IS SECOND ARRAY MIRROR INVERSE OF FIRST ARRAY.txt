@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int mirror(int b[],int a[],int N)
+{
+	int i,c[N];
+	for(i=0;i<N;i++)
+	{
+		c[b[i]]=i;
+	}
+	for(int i=0;i<N;i++){
+		if(c[i]!=a[i])
+		{
+		return 0;   
+		}
+    }
+	return 1;
+} 
+int main() {
+	int b[100],N,i,val,a[100];
+	cin>>N;
+	for(i=0;i<N;i++)
+	{
+		cin>>b[i];
+	}
+	for(i=0;i<N;i++)
+	{
+		cin>>a[i];
+	}
+	val=mirror(b,a,N);
+	if(val==0)
+	{
+	cout<<"false";
+	}
+	else
+	{
+	cout<<"true";
+	}
+}

@@ -1,0 +1,55 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class node{
+public:
+    int data;
+    node*left;
+    node*right;
+    node(int d)
+    {data=d;
+    left=NULL;
+    right=NULL;
+    }
+    };
+        void takeInput(node* &root) {
+    string left, right;
+    int data;
+    cin >> data;
+    root = new node(data);
+
+    cin >> left;
+    if(left == "true") {
+        takeInput(root->left);
+    }
+
+    cin >> right;
+    if(right == "true") {
+        takeInput(root->right);
+    }
+}
+void levelPrint(node* root1) {
+    queue<node*> q;
+    node* const MARKER = NULL;
+    q.push(root1);
+    q.push(MARKER);
+
+    while (q.empty() == false) {
+        node* curNode = q.front(); q.pop();
+        if (curNode == MARKER) {
+            cout << endl;
+            if (q.empty() == false) q.push(MARKER);
+            continue;
+        }
+        cout << curNode->data << " ";
+        if (curNode->left) q.push(curNode->left);
+        if (curNode->right) q.push(curNode->right);
+    }
+}
+int main() {
+    node*root1=NULL;
+vector <int> path;
+takeInput(root1);
+levelPrint(root1);
+
+}

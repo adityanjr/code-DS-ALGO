@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+void numofpaths(char str[], int r, int c, int row, int col, int i,int &countt)
+{
+    if (r == row - 1 && c == col - 1)
+    {
+        countt++;
+        return;
+    }
+    if (r >= row || c >= col)
+    {
+        return;
+    }
+
+    numofpaths(str, r, c + 1, row, col, i + 1,countt);
+    //str[i]='V';
+    numofpaths(str, r + 1, c, row, col, i + 1,countt);
+    if (r == c || r+c==row -1 )
+    {
+        //  str[i]='D';
+        numofpaths(str, r + 1, c + 1, row, col, i + 1,countt);
+    }
+    str[i] = '\0';
+    return;
+
+}
+void paths(char str[],int r,int c,int row,int col,int i )
+{
+    if(r==row-1 && c==col-1)
+    {
+        cout<<str<<" ";
+        return;
+    }
+    if(r>=row || c>=col)
+    {
+        return;
+    }
+
+    str[i]='V';
+    paths(str,r+1,c,row,col,i+1);
+    str[i]='H';
+    paths(str,r,c+1,row,col,i+1);
+
+        if(r==c)
+    {
+        str[i]='D';
+        paths(str,r+1,c+1,row,col,i+1);
+    }
+    str[i]='\0';
+    return;
+
+}
+int main()
+{   int countt = 0;
+    char str[1000]={};
+    int a,n,i=0,row,col,r,c;
+    cin>>n;
+    row=n;
+    col=n;
+    numofpaths(str,0,0,row,col,i,countt);
+    cout<<countt<<endl;
+    paths(str,0,0,row,col,i);
+return 0;
+}

@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int Count=0;
+void rec(char* s,int i,char *out,int j,map<string,string> &m){
+    if(s[i]=='\0')
+    {
+        Count++;
+        out[j]='\0';
+        string temp=out;
+        m[temp]=temp;
+        return;
+    }
+    rec(s,i+1,out,j,m);
+    out[j]=s[i];
+    rec(s,i+1,out,j+1,m);
+    int a=97+s[i]-'a';
+    out[j]=48+a/10;
+    out[j+1]=48+a%10;
+    rec(s,i+1,out,j+2,m);
+}
+
+void rec1(char* s,int i,char *out,int j,map<string,string> &m){
+    if(s[i]=='\0')
+    {
+        Count++;
+        out[j]='\0';
+        cout<<out<<" ";
+        return;
+    }
+    rec1(s,i+1,out,j,m);
+    out[j]=s[i];
+    rec1(s,i+1,out,j+1,m);
+    int a=97+s[i]-'a';
+    out[j]=48+a/10;
+    out[j+1]=48+a%10;
+    rec1(s,i+1,out,j+2,m);
+}
+
+int main() {
+    char s[10000],out[10000];
+    cin>>s;
+    map<string ,string>  m;
+    rec(s,0,out,0,m);
+    cout<<Count<<endl;
+    char out1[10000];
+    rec1(s,0,out1,0,m);
+	return 0;
+}

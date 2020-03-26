@@ -1,0 +1,27 @@
+#include<iostream>
+#include <cmath>
+using namespace std;
+
+int decimalToOctal(int decimalNumber);
+
+int main()
+{
+   int dN;
+   cin >> dN;
+   decimalToOctal(dN);
+   cout<<decimalToOctal(dN);
+   
+   return 0;
+}
+int decimalToOctal(int dN)
+{
+    int rem, i = 1, octalNumber = 0;
+    while (dN !=0)
+    {
+        rem = dN % 8;
+        dN /= 8;
+        octalNumber += rem * i;
+        i *= 10;
+    }
+    return octalNumber;
+}
