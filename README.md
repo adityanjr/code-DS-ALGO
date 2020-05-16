@@ -1,7 +1,7 @@
-# Codes-DS-ALGO   [![contributions welcome](https://img.shields.io/badge/Contributions-welcome-blue)](https://github.com/adityanjr/code-DS-ALGO/blob/master/contributing.md)&nbsp;
-Your own personal library of every **algorithm** and **data structure** codes that you will ever encounter.
+# DS-ALGO   [![contributions welcome](https://img.shields.io/badge/Contributions-welcome-blue)](https://github.com/adityanjr/code-DS-ALGO/blob/master/contributing.md)&nbsp;
+Library of every **algorithm** and **data structure** codes that you will ever encounter.
 > This repository contains some useful questions for interview and competitive programming.
-> This will also help to complete PRs for HacktoberFest challenge.
+> This will also help to complete your first PR for HacktoberFest challenge.
 
 ## Contribution Guidelines
 
@@ -20,7 +20,7 @@ Read our [Contribution Guidelines](https://github.com/adityanjr/code-DS-ALGO/blo
 ## Supported Languages :
 `C++` `PYTHON` `JAVA`
 
-## Licence MIT 
+## End
 Feel Free to Use for learning purpose.
 
 ### [![Follow](https://img.shields.io/github/followers/adityanjr?label=Follow&style=social)](https://github.com/adityanjr)
