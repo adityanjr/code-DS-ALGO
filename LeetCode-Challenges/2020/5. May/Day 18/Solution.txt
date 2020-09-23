@@ -1,0 +1,46 @@
+class Solution {
+public:
+    bool checkInclusion(string s1, string s2) {
+        
+       // sort(p.begin(),p.end());
+        int p1[26];
+        memset(p1,0,sizeof(p1));
+        for(int i=0;i<s1.size();i++)
+        {
+            p1[int(s1[i])-int('a')]++ ;
+        }
+       // cout<<p1[0]<<endl;
+        for(int i=0;i<s2.size();i++)
+        {
+            int flag=0;
+            if(i+s1.size()-1<s2.size())
+            {
+                
+                int p2[26];
+                 memset(p2,0,sizeof(p2));
+                for(int k=0;k<s1.size();k++)
+                {
+                    p2[int(s2[k+i])-int('a')]++;
+                    
+                }
+               // cout<<s2[0]<<" ";
+                for(int j=0;j<26;j++)
+                {
+                    if(p1[j]!=p2[j])
+                    {
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0)
+                {
+                    return true;
+                }
+                
+            }
+            
+            
+        }
+        return false;
+    }
+};
