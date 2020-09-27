@@ -1,0 +1,35 @@
+class Solution {
+public:
+    string frequencySort(string s) {
+        pair<int,int> frequency[128];
+         for(int i=0;i<128;i++)
+        {
+            frequency[i]=make_pair(0,i);
+            
+        }
+        
+        for(int i=0;i<s.size();i++)
+        {
+            frequency[int(s[i])].first++;
+            
+        }
+        sort(frequency,frequency+128,greater<pair<int,int>>());
+        string sorted;
+        int i=0;
+        while(frequency[i].first>0)
+        {
+            
+            while(frequency[i].first>0)
+            {
+                
+                // do not use + for adding in string because it increase time complexity 
+                // time complexity of + operation =len(string1)+len(string2) so total become n^2
+                //push_back() is O(1) time complexity
+                sorted.push_back(char(frequency[i].second));
+                frequency[i].first--;
+            }
+            i++;
+        }
+        return sorted;
+    }
+};
