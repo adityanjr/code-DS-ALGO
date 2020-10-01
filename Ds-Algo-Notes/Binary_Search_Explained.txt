@@ -1,0 +1,32 @@
+BINARY SEARCH
+
+GENERAL EXPLANATION :
+Binary Search is an algorithm used to search for an element in sorted arrays. Its Time-Complexity is O(logn). Its Time Complexity is much better than Linear Search, that is O(n).
+Binary Search starts working by comparing the middle element of the array with the required element. If a matcch occurs then the index of the element is returned. If the middle element is greater than the element we are searching for then a recursive call is made on the first-half of the array. Otherwise , recursive call is made on the second-half of the array.
+
+PSEUDO-CODE :
+
+BINARY_SEARCH(ARR,0,N-1,ITEM)
+
+ARR is the Sorted Array in which we search.
+N is the size of ARR.
+ITEM is the element to be searched.
+
+START = 0
+END = N-1
+
+if END >= L
+   MID = START + (END-1)/2
+   if ARR[MID] == ITEM
+       return MID and EXIT
+   else if ARR[MID] > ITEM
+       CALL BINARY_SEARCH(ARR,START,MID-1,ITEM)
+   else
+       CALL BINARY_SERACH(ARR,MID+1,END,ITEM);
+
+
+else
+    WRITE "Not Found" and EXIT
+   
+SUMMARY
+Binary search halves the searchable items and thus reduces the number of comparisons to be made significantly less. 
