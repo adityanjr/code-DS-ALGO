@@ -22,7 +22,7 @@ void printleftrightview(struct Node *root)
     int k, i;
     map<int, list<struct Node *>> mp;
     queue<struct Node *> q1;
-    queue<int> q2;
+    queue<int> q2; //for giving a number to the corresponding node in q1
     q1.push(root);
     q2.push(0);
     while (!q1.empty())
@@ -41,7 +41,7 @@ void printleftrightview(struct Node *root)
             q1.push(temp->right);
             q2.push(k + 1);
         }
-        mp[k].push_front(temp);
+        mp[k].push_front(temp);//we are pushing all the nodes one by one by the number given in q2
     }
     cout << "the right view of the tree is\n";
     for (auto i : mp)
