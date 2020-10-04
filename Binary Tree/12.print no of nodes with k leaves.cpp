@@ -23,13 +23,13 @@ int leaves(struct Node* root,int k)
     {
         return 0;
     }
-    else if(root->left==NULL&&root->right==NULL)
+    else if(root->left==NULL&&root->right==NULL)//we are excluding the case where the node is a leaf node
     {
         return 1;
     }
 
-    int lc = leaves(root->left,k);
-    int rc = leaves(root->right,k);
+    int lc = leaves(root->left,k);//counts all the left child nodes
+    int rc = leaves(root->right,k);//counts all the right child nodes
     int tc = lc+rc;
     if(tc==k)
     {
