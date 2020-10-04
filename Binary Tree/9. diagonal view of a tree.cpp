@@ -18,7 +18,7 @@ struct Node *newnode(int x)
 
     return temp;
 }
-void printtopbuttom(struct Node *root)
+void diagonal(struct Node *root)
 {
     int k;
     queue<struct Node *> q1;
@@ -67,6 +67,6 @@ int main()
     root->right->left = newnode(6);
     root->right->right = newnode(7);
     root->right->left->right = newnode(8);
-    printtopbuttom(root);
+    diagonal(root);
     return 0;
 }
