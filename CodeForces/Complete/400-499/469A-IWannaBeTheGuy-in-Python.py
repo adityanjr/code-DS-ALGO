@@ -1,3 +1,4 @@
+#Question link : http://codeforces.com/contest/469/problem/A
 
 num = int(input())
 X = list(map(int, input().split()))
@@ -24,3 +25,5 @@ if t==1:
     print("Oh, my keyboard!")
 else:
     print("I become the guy.")
+    
+#End of Program
