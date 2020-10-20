@@ -8,22 +8,19 @@ Write an efficient algorithm that searches for a value in an <code>m x n</code>m
    <li>The first integer of each row is greater than the last integer of the previous row.</li>
   </ul>
 
-  <h2><b>Example 1:</b></h2>
-  <img src="Image.png" alt="Explanation">
-   
- 
-  <h4><b>Input:</b></h4>
-  ```bash
-  matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 3
-```
-<h4><b>Output</b></h4>
-  ```bash
-true
-```
-<h3><b>Explanation</b></h3>
-<p>
-We can multiply <code>2</code> to get <code>4</code>, and then again to get <code>8</code>, then add <code>1</code> to get <code>9</code>.</p>
+  <h3><b>Example 1:</b></h3>
+  <img src="Image1.png" alt="Explanation">
+<h3><b>Explanation 2:</b></h3>
+ <img src="Image2.png" alt="Explanation">
+ <h3><b>Explanation 3:</b></h3>
+ <img src="Image3.png" alt="Explanation">
 
-
+<h3><b>Constraints:</b></h3>:
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[i].length</code></li>
+<li><code>0 <= m, n <= 100</code></li>
+<li><img src="Image4.png" alt="Constraints"></li>
+</ul>
 
 
