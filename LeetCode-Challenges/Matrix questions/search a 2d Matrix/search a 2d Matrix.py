@@ -20,9 +20,7 @@ def SearchMatrix(matrix,target):
             left=mid+1
     return(False)
 if __name__=="__main__":
-    n=int(input())
-    matrix=[]
-    for i in range(n):
-        matrix.append(int(input()) for k in range(int(input())))
+    m,n=map(int,input().split())
+    matrix=[[int(input()) for c in range(n)]for r in range(m)]
     target=int(input())
     print(SearchMatrix(matrix,target))        
