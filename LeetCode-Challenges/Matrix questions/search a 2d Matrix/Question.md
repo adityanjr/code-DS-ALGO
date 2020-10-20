@@ -9,11 +9,11 @@ Write an efficient algorithm that searches for a value in an <code>m x n</code>m
   </ul>
 
   <h3><b>Example 1:</b></h3>
-  <img src="Image1.png" alt="Explanation">
+  <img src="Images/Image1.png" alt="Explanation">
 <h3><b>Explanation 2:</b></h3>
- <img src="Image2.png" alt="Explanation">
+ <img src="Images/Image2.png" alt="Explanation">
  <h3><b>Explanation 3:</b></h3>
- <img src="Image3.png" alt="Explanation">
+ <img src="Images/Image3.png" alt="Explanation">
 
 <h3><b>Constraints:</b></h3>:
 <ul>
