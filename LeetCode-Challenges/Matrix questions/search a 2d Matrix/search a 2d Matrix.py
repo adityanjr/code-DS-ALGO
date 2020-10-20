@@ -1,3 +1,10 @@
+"""
+Approach:We are using the Binary search as we cannot search a matrix with more number of rows and columns.Here First we search
+every row such that target lies in the bound of a particular row if the target exists in that row then fix that row and apply 
+binary search algorithm over that row
+
+"""
+
 def SearchMatrix(matrix,target):
     if(not matrix or not matrix[0]):
         return(False)
