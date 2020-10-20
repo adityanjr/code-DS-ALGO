@@ -20,7 +20,7 @@ Write an efficient algorithm that searches for a value in an <code>m x n</code>m
 <li><code>m == matrix.length</code></li>
 <li><code>n == matrix[i].length</code></li>
 <li><code>0 <= m, n <= 100</code></li>
-<li><img src="Image4.png" alt="Constraints"></li>
+<li><code>-10<sup>4</sup><= matrix[i][j], target <= 10<sup>4</sup></code></li>
 </ul>
 
 
