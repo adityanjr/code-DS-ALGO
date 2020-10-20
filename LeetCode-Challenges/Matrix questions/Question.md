@@ -9,20 +9,16 @@ Write an efficient algorithm that searches for a value in an <code>m x n</code>m
   </ul>
 
   <h2><b>Example 1:</b></h2>
-  <img src="C:\Users\srini\Desktop\Capture1.JPG" alt="Explanation">
+  <img src="Image.png" alt="Explanation">
    
  
-
+  <h4><b>Input:</b></h4>
   ```bash
-  <h4><b>Input:</b></h4> matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 3
-  <h4><b>Output:</b></h4> true
-
-
+  matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 3
 ```
 <h4><b>Output</b></h4>
-
   ```bash
-3
+true
 ```
 <h3><b>Explanation</b></h3>
 <p>
