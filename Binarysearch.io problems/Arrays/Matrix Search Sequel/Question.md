@@ -5,9 +5,11 @@ Given a two-dimensional integer <code>matrix</code>, where every row and column 
 ascending order, return whether an integer <code>target</code> exists in the matrix.<br>
 For example, given <code>matrix</code>
 </p>
-<`[1, 3, 9]
+<code>
+[1, 3, 9]
 [2, 5, 10]
-[5, 7, 13]`>
+[5, 7, 13]
+</code>
 
   <ul>
    <li>Integers in each row are sorted from left to right.</li>
