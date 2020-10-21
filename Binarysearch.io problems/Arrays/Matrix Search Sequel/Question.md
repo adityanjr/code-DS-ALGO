@@ -5,7 +5,7 @@ Given a two-dimensional integer <code>matrix</code>, where every row and column 
 ascending order, return whether an integer <code>target</code> exists in the matrix.<br>
 For example, given <code>matrix</code>
 </p>
- ```bash
+ ```
 [1, 3, 9]
 [2, 5, 10]
 [5, 7, 13]
