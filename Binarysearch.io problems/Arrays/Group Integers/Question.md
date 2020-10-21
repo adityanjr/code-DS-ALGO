@@ -1,5 +1,5 @@
 <h1><a href="https://binarysearch.com/problems/Group-Integers">Group Integers</a></h1>
-<img src="Images/image1.png" alt="Difficulty level">
+<img src="Images/Image1.png" alt="Difficulty level">
 <p>
 Given a list of integers <code>nums</code>, return whether you can split the list into <code>1</code> or more groups where:
 <ul>
