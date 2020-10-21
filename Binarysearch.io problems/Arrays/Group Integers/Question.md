@@ -1,5 +1,5 @@
 <h1><a href="https://binarysearch.com/problems/Group-Integers">Group Integers</a></h1>
-<img src="Images/Image1.png" alt="Difficulty level">
+<img src="Images/image1.png" alt="Difficulty level">
 <p>
 Given a list of integers <code>nums</code>, return whether you can split the list into <code>1</code> or more groups where:
 <ul>
@@ -16,10 +16,10 @@ Given a list of integers <code>nums</code>, return whether you can split the lis
 <h3><b>Example 1</b></h3>
 
 <h2><b>Input<b></h2>
-<img src="Images/Image2.png" alt="Input">
+<img src="Images/image2.png" alt="Input">
 
  <h2><b>Output</b></h2>
-<img src="Images/Image3.png" alt="Output">
+<img src="Images/image3.png" alt="Output">
 <h3><b>Explanation</b></h3>
 <p>We can group the numbers like so:
 <ul>
@@ -33,10 +33,10 @@ Given a list of integers <code>nums</code>, return whether you can split the lis
 <h3><b>Example 2</b></h3>
 
 <h2><b>Input<b></h2>
-<img src="Images/Image4.png" alt="Input">
+<img src="Images/image4.png" alt="Input">
 
  <h2><b>Output</b></h2>
-<img src="Images/Image5.png" alt="Output">
+<img src="Images/image5.png" alt="Output">
 <h3><b>Explanation</b></h3>
 <p>
 We can group the numbers like so:
