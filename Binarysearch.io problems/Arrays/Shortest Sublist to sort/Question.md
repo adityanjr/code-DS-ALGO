@@ -3,6 +3,7 @@
 <p>
 Given a list of integers <code>nums</code>, return the length of the shortest sublist in
 <code>nums</code> which if sorted would make <code>nums</code> sorted in ascending order.
+</p>
  
 <h3><b>Example 1:</b></h3>
 
