@@ -1,4 +1,4 @@
-<h1><a href="https://binarysearch.com/problems/Shortest-Sublist-to-Sort">Shortest Sublist to Sortl</a></h1>
+<h1><a href="https://binarysearch.com/problems/Shortest-Sublist-to-Sort">Shortest Sublist to Sort</a></h1>
 <img src="Images/Image1.png" alt="Difficulty level">
 <p>
 Given a list of integers <code>nums</code>, return the length of the shortest sublist in
