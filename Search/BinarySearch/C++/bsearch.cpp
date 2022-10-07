@@ -6,15 +6,12 @@
 std::vector<int> myarray;
 
 
-// implements binary search
-bool binary_search(int number)
-{
+bool binary_search(int number) {
     int higher = myarray.size();
     int lower = 0;
     int mid;
 
-    do
-    {
+    while(lower <= higher) {
         mid = (lower + (higher - lower)) / 2;
         if (number == myarray[mid])
         {
@@ -29,19 +26,12 @@ bool binary_search(int number)
 
         if (higher - lower == 1)
             return false;
-    } while (true);
-}
-
-
-bool is_digits(const std::string &str)
-{
-    return std::all_of(str.begin(), str.end(), ::isdigit); // C++11
+    }
 }
 
 
 int main(int argc, char const *argv[])
 {
-    /* code */
 
     std::string z;
     while(true)
