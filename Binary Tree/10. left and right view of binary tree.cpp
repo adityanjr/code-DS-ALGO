@@ -2,7 +2,6 @@
 
 using namespace std;
 
-//Author : Swoyam S Sahoo
 struct Node
 {
     int data;
@@ -43,12 +42,6 @@ void printleftrightview(struct Node *root)
         }
         mp[k].push_front(temp);//we are pushing all the nodes one by one by the number given in q2
     }
-    cout << "the right view of the tree is\n";
-    for (auto i : mp)
-    {
-        cout << i.second.front()->data << " ";
-    }
-    cout << endl;
     cout << "the left view of the tree is\n";
     for (auto i : mp)
     {
